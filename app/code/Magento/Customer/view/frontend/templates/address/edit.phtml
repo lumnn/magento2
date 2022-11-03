@@ -67,13 +67,13 @@ $regionProvider = $block->getRegionProvider();
                             <?= $escaper->escapeHtml(__('Street Address: Line %1', 1)) ?>
                         </span>
                     </label>
+                    <input type="text"
+                           name="street[0]"
+                           value="<?= $escaper->escapeHtmlAttr($block->getStreetLine(1)) ?>"
+                           title="<?= /* @noEscape */ $_street ?>"
+                           id="street_1"
+                           class="input-text <?= $escaper->escapeHtmlAttr($_streetValidationClass) ?>"/>
                 </div>
-                <input type="text"
-                       name="street[0]"
-                       value="<?= $escaper->escapeHtmlAttr($block->getStreetLine(1)) ?>"
-                       title="<?= /* @noEscape */ $_street ?>"
-                       id="street_1"
-                       class="input-text <?= $escaper->escapeHtmlAttr($_streetValidationClass) ?>"/>
                 <div class="nested">
                     <?php for ($_i = 1, $_n = $viewModel->addressGetStreetLines(); $_i < $_n; $_i++): ?>
                         <div class="field additional">
